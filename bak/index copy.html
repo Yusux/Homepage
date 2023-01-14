@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Yusux</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./css/bootstrap.min.css" rel="stylesheet">
+        <link href="./css/customstyle.css" rel="stylesheet">
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script> -->
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.2.min.js"></script>
+    </head>
+
+    <body class="d-flex flex-column h-100 text-center text-black bg-light">
+        <script>
+            const options = {
+                time: '0.2s',
+                mixColor: '#ddd',
+                backgroundColor: '#fff',
+                buttonColorDark: '#222',
+                buttonColorLight: '#bbb',
+            }
+            const darkmode = new Darkmode(options);
+
+            function textChange() {
+                var text = document.getElementById("modetext");
+                var toggle = document.getElementById("modetoggle")
+                if (darkmode.isActivated()) {
+                    text.innerHTML = "&#xe60f;";
+                    toggle.style.color = "#222";
+                } else {
+                    text.innerHTML = "&#xe6c0;";
+                    toggle.style.color = "#fff";
+                }
+            }
+        </script>
+
+        <header class="mb-auto"></header>
+
+        <main>
+            <div class="container pf-group">
+                <img src="./img/profile_pic.png" class="img-fluid rounded-circle pf-pic" alt="Profile Picture">
+                <p class="pf-text">Yusux</p>
+            </div>
+            <div class="container">
+                <a class="link" href="https://github.com/Yusux" data-bs-toggle="tooltip" data-bs-placement="bottom" title="GitHub">
+                    <span class="icon iconfont">&#xe8c6;</span>
+                </a>
+                <a class="link" href="https://pan.yusux.moe" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cloud Storage">
+                    <span class="icon iconfont">&#xe9dd;</span>
+                </a>
+                <a class="link" href="https://blog.yusux.moe" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Blog">
+                    <span class="icon iconfont">&#xe624;</span>
+                </a>
+                <a class="link" href="https://note.yusux.moe" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Notebook">
+                    <span class="icon iconfont">&#xe6af;</span>
+                </a>
+                <a class="link" href="https://space.bilibili.com/15251244" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bilibili">
+                    <span class="icon iconfont">&#xe66d;</span>
+                </a>
+                <a class="link" href="mailto:syusux@gmail.com" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email">
+                    <span class="icon iconfont">&#xe62d;</span>
+                </a>
+            </div>
+        </main>
+
+        <footer class="mt-auto">
+            <div class="container">
+                <p>Copyright © 2023 Yusux</p>    
+            </div>
+        </footer>
+
+        <div class="container-fluid text-end togglediv">
+            <a id="modetoggle" class="link" href="javascript:;" onclick="darkmode.toggle();textChange();">
+                <span id="modetext" class="icon iconfont">&#xe6c0;</span>
+            </a>
+        </div>
+
+        <script>
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(
+                function (tooltipTriggerEl) {
+                    return new bootstrap.Tooltip(tooltipTriggerEl)
+                }
+            )
+
+            // for all <a> elements, change its color when hover
+            $("a").hover(
+                function () {
+                    $(this).css("color", "#000");
+                },
+                function () {
+                    $(this).css("color", "#fff");
+                }
+            );
+        </script>
+    </body>
+</html>
