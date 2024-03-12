@@ -1,4 +1,3 @@
-
 theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark';
 function themeChange() {
     theme = theme == 'dark' ? 'light' : 'dark';
