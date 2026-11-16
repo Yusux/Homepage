@@ -1,28 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>洛琳喵窝</title>
+        <title>Hua Geng</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Rorin's Homepage">
-        <meta name="keywords" content="Rorin, Homepage">
-        <meta name="author" content="Rorin">
-        <meta name="copyright" content="Rorin">
-        <link rel="icon" href="https://cdn.jsdelivr.net/gh/Yusux/Homepage/img/favicon.png">
+        <meta name="description" content="Homepage of Hua Geng (耿华), master's student at Zhejiang University">
+        <meta name="keywords" content="Hua Geng, 耿华, Rorin, Zhejiang University, Homepage">
+        <meta name="author" content="Yusux">
+        <meta name="copyright" content="Yusux">
+        <link rel="icon" href="img/favicon.png">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Yusux/Homepage/css/customstyle.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css">
+        <link rel="stylesheet" href="css/customstyle.css">
     </head>
 
-    <body class="d-flex flex-column h-100 text-center text-black bg-light">
-        <header class="mb-auto"></header>
+    <body class="d-flex flex-column text-center text-black bg-light">
+        <header id="top">
+            <nav class="container nav-bar">
+                <a class="nav-item-link" href="#about">About</a>
+                <a class="nav-item-link" href="#news">News</a>
+                <a class="nav-item-link" href="#publications">Publications</a>
+                <a class="nav-item-link" href="#experience">Experience</a>
+            </nav>
+        </header>
 
         <main>
+            <!-- ============ Profile ============ -->
             <div class="container pf-group">
-                <img src="https://cdn.jsdelivr.net/gh/Yusux/Homepage/img/profile_pic.png" class="img-fluid rounded-circle pf-pic" alt="Profile Picture">
-                <p class="pf-text">Rorin / Yusux</p>
+                <img src="img/profile_pic.png" class="img-fluid rounded-circle pf-pic" alt="Profile Picture">
+                <p class="pf-text">Hua Geng (耿华)</p>
+                <!-- TODO: 学位写法待确认（学硕 M.S. / 专硕 M.Eng.） -->
+                <p class="pf-sub">Master's Student @ Zhejiang University</p>
             </div>
-            <div class="container">
+            <div class="container pf-links">
+                <a class="link" href="mailto:huag@zju.edu.cn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email">
+                    <span class="icon iconfont">&#xe62d;</span>
+                </a>
+                <a class="link" href="https://scholar.google.com/citations?user=KJpkWo0AAAAJ" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Google Scholar">
+                    <span class="icon bi bi-mortarboard-fill"></span>
+                </a>
                 <a class="link" href="https://github.com/Yusux/" data-bs-toggle="tooltip" data-bs-placement="bottom" title="GitHub">
                     <span class="icon iconfont">&#xe8c6;</span>
                 </a>
@@ -35,20 +52,233 @@
                 <a class="link" href="https://lab.rorin.cc/" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Lab">
                     <span class="icon iconfont">&#xe76b;</span>
                 </a>
-                <a class="link" href="https://drive.rorin.cc/" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cloud Drive">
-                    <span class="icon iconfont">&#xe84a;</span>
-                </a>
-                <a class="link" href="mailto:syusux@gmail.com" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email">
-                    <span class="icon iconfont">&#xe62d;</span>
-                </a>
+            </div>
+
+            <div class="container content text-start">
+
+                <!-- ============ About ============ -->
+                <section id="about">
+                    <h2 class="sec-title"><a class="anchor" href="#about" title="Copy link">About</a></h2>
+                    <!-- TODO: 年级每年更新 -->
+                    <p>
+                        I am a second-year master's student at the
+                        <a href="http://www.cs.zju.edu.cn/">College of Computer Science and Technology</a>,
+                        <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>, advised by
+                        <a href="https://cshen.github.io/">Prof. Chunhua Shen</a>.
+                        Before that, I received my B.Eng. degree in Computer Science and Technology
+                        from Zhejiang University in 2025, as a member of
+                        <a href="http://ckc.zju.edu.cn/ckcen/_t1906/wbout/list.psp">Chu Kochen Honors College</a> and the
+                        <a href="http://www.en.cs.zju.edu.cn/turing_honors_class/list.htm">Turing Honors Class</a>.
+                    </p>
+                    <p>
+                        My research interests lie in multimodal learning, efficient inference and 3D vision.
+                        Feel free to reach out via <a href="mailto:huag@zju.edu.cn">email</a> for discussion or collaboration.
+                    </p>
+                </section>
+
+                <!-- ============ News ============ -->
+                <section id="news">
+                    <h2 class="sec-title"><a class="anchor" href="#news" title="Copy link">News</a></h2>
+                    <!-- 条目模板：复制一个 .news-item 即可，新的放最上面。只记录录用、获奖等，仅挂 arXiv 不加新闻 -->
+                    <div class="news-list">
+                        <!-- TODO: 录用时间待确认 -->
+                        <div class="news-item">
+                            <span class="news-date">2026.02</span>
+                            <span class="news-text">Two papers, <b><a href="https://arxiv.org/abs/2604.21713">CARVE</a></b> and <b><a href="https://arxiv.org/abs/2606.03577">ReasonMatch</a></b>, are accepted to <b>CVPR 2026</b>.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ Publications ============ -->
+                <section id="publications">
+                    <h2 class="sec-title"><a class="anchor" href="#publications" title="Copy link">Publications</a></h2>
+                    <p class="sec-note"><sup>*</sup>Equal Contribution &nbsp; <sup>†</sup>Corresponding Author</p>
+
+                    <!-- 条目模板：复制一个 .pub-item 即可。
+                         自己的名字用 <b class="me">；共一 / 通讯标记写成 <sup>*</sup> / <sup>†</sup>，紧跟名字、放在逗号前；没有的链接直接删掉对应的 <a class="tag">；
+                         奖项可在会议后加 <span class="pub-award">Oral</span>。
+                         排序：一作 / 共一的文章放最上面，其余按时间倒序 -->
+                    <div class="pub-item">
+                        <div class="pub-title">JVT: Just Video Transformer Makes Pixel-Space Video Diffusion Simple</div>
+                        <div class="pub-authors">
+                            Jianjun Zhou<sup>*</sup>, <b class="me">Hua Geng</b><sup>*</sup>, Haoyu Guo<sup>†</sup>
+                        </div>
+                        <div class="pub-venue"><i>arXiv preprint, 2026</i></div>
+                        <div class="pub-links">
+                            <a class="tag" href="https://arxiv.org/abs/2611.18549">arXiv</a>
+                            <a class="tag" href="https://github.com/ZhouTimeMachine/JVT">Code</a>
+                            <a class="tag" href="https://zhoutimemachine.github.io/JVT">Project</a>
+                        </div>
+                    </div>
+
+                    <div class="pub-item">
+                        <div class="pub-title">Unlocking the Power of Critical Factors for 3D Visual Geometry Estimation</div>
+                        <div class="pub-authors">
+                            Guangkai Xu<sup>*</sup>, <b class="me">Hua Geng</b><sup>*</sup>, Huanyi Zheng, Songyi Yin, Yanlong Sun, Hao Chen, Chunhua Shen<sup>†</sup>
+                        </div>
+                        <div class="pub-venue"><i>CVPR 2026</i></div>
+                        <div class="pub-links">
+                            <a class="tag" href="https://arxiv.org/abs/2604.21713">arXiv</a>
+                            <a class="tag" href="https://github.com/aim-uofa/CARVE">Code</a>
+                        </div>
+                    </div>
+
+                    <div class="pub-item">
+                        <div class="pub-title">DraftAttention2: Fast Video Diffusion with Low-Resolution-Guided Mixed-Precision Attention</div>
+                        <div class="pub-authors">
+                            Rui Ding<sup>*</sup>, Haopeng Li<sup>*</sup>, Weize Ma, Yufa Zhou, Yitong Li, Xiaoling Zhou, Jiashuo Cao, Liyang Li,
+                            <b class="me">Hua Geng</b>, Jiuxiang Gu, Jun Lin, Enze Xie, Xuan Shen<sup>†</sup>
+                        </div>
+                        <div class="pub-venue"><i>arXiv preprint, 2026</i></div>
+                        <div class="pub-links">
+                            <a class="tag" href="https://arxiv.org/abs/2609.32628">arXiv</a>
+                            <a class="tag" href="https://github.com/anemoi-project/anemoi">Code</a>
+                        </div>
+                    </div>
+
+                    <div class="pub-item">
+                        <div class="pub-title">Eliciting Complex Spatial Reasoning in MLLMs through Wide-Baseline Matching</div>
+                        <div class="pub-authors">
+                            Hao Zhong<sup>*</sup>, Muzhi Zhu<sup>*</sup>, Shenyan Zeng<sup>*</sup>, Anzhou Li, Cong Chen, <b class="me">Hua Geng</b>,
+                            Duochao Shi, Wentao Ye, Tao Lin<sup>†</sup>, Hao Chen<sup>†</sup>, Chunhua Shen<sup>†</sup>
+                        </div>
+                        <div class="pub-venue"><i>CVPR 2026</i></div>
+                        <div class="pub-links">
+                            <a class="tag" href="https://arxiv.org/abs/2606.03577">arXiv</a>
+                            <a class="tag" href="https://github.com/aim-uofa/ReasonMatch">Code</a>
+                            <a class="tag" href="https://aim-uofa.github.io/reasonmatch/">Project</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ Experience ============ -->
+                <section id="experience">
+                    <h2 class="sec-title"><a class="anchor" href="#experience" title="Copy link">Experience</a></h2>
+
+                    <!-- 社团、实习等经历直接列在这里（## Education 之前），新的放最上面。
+                         条目模板：复制一个 .exp-item 即可；实习可在 .exp-detail 写 Mentor -->
+                    <div class="exp-item">
+                        <div class="exp-date">2022.09 - 2025.06</div>
+                        <div class="exp-body">
+                            <div class="exp-org"><a href="https://www.zjusct.io/">ZJU Supercomputing Team (ZJUSCT)</a></div>
+                            <div class="exp-role">Team Member</div>
+                            <div class="exp-detail">Competed in IndySCC 23 and ASC24</div>
+                        </div>
+                    </div>
+
+                    <!-- ---- Education ---- -->
+                    <h3 class="sub-title" id="education"><a class="anchor" href="#education" title="Copy link">Education</a></h3>
+                    <!-- 标题都可以点击复制链接：新增小节时照着 .sub-title 写，id 和 href 保持一致。
+                         条目模板：复制一个 .exp-item 即可（教育 / 实习 / 访问都放这里）。
+                         .exp-detail 一行可选，可写多行 -->
+                    <div class="exp-item">
+                        <div class="exp-date">2025.09 - Present</div>
+                        <div class="exp-body">
+                            <div class="exp-org"><a href="https://www.zju.edu.cn/english/">Zhejiang University</a></div>
+                            <div class="exp-role">Master's Student, College of Computer Science and Technology</div>
+                            <div class="exp-detail">Advisor: <a href="https://cshen.github.io/">Prof. Chunhua Shen</a></div>
+                        </div>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-date">2021.09 - 2025.06</div>
+                        <div class="exp-body">
+                            <div class="exp-org"><a href="https://www.zju.edu.cn/english/">Zhejiang University</a></div>
+                            <div class="exp-role">B.Eng. in Computer Science and Technology, College of Computer Science and Technology</div>
+                            <div class="exp-role"><a href="http://ckc.zju.edu.cn/ckcen/_t1906/wbout/list.psp">Chu Kochen Honors College</a>, <a href="http://www.en.cs.zju.edu.cn/turing_honors_class/list.htm">Turing Honors Class</a></div>
+                            <div class="exp-detail">GPA: 3.99/4.0 (92.33/100), Rank: 2/79</div>
+                        </div>
+                    </div>
+
+                    <!-- ---- Teaching ---- -->
+                    <h3 class="sub-title" id="teaching"><a class="anchor" href="#teaching" title="Copy link">Teaching Assistant</a></h3>
+                    <!-- 条目模板：复制一个 .exp-item 即可，新的放最上面；同一门课多年担任助教就合并成一条，写成 "2025 / 2026"。均为 Zhejiang University 的课程。
+                         .fold 默认只显示前 data-fold-show 条，其余点 "more" 展开；去掉 class="fold" 即全部显示 -->
+                    <div class="fold" data-fold-show="2">
+                    <div class="exp-item">
+                        <div class="exp-date">2025 / 2026</div>
+                        <div class="exp-body">
+                            <div class="exp-org">CS2045M: Advanced Data Structures</div>
+                            <div class="exp-detail">Instructor: <a href="https://stan-haochen.github.io/">Prof. Hao Chen</a></div>
+                        </div>
+                    </div>
+                    <div class="exp-item">
+                        <div class="exp-date">2024</div>
+                        <div class="exp-body">
+                            <div class="exp-org">CS2053M: Computer Systems: OS Kernel Design</div>
+                            <div class="exp-detail">Instructor: <a href="https://person.zju.edu.cn/changrui">Prof. Rui Chang</a></div>
+                        </div>
+                    </div>
+                    <div class="exp-item">
+                        <div class="exp-date">2024</div>
+                        <div class="exp-body">
+                            <div class="exp-org">CS3211M: Fundamental Theory and Methods of Optimization</div>
+                            <div class="exp-detail">Instructor: <a href="https://person.zju.edu.cn/en/0003412">Prof. Hui Qian</a></div>
+                        </div>
+                    </div>
+                    <div class="exp-item">
+                        <div class="exp-date">2024</div>
+                        <div class="exp-body">
+                            <div class="exp-org">CS3132M: Computer Vision</div>
+                            <div class="exp-detail">Instructor: <a href="https://person.zju.edu.cn/gpan">Prof. Gang Pan</a></div>
+                        </div>
+                    </div>
+                    <div class="exp-item">
+                        <div class="exp-date">2023 / 2024</div>
+                        <div class="exp-body">
+                            <div class="exp-org">CS1030M: HPC 101</div>
+                            <div class="exp-detail">Instructor: <a href="https://www.zjusct.io/">ZJUSCT</a></div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- ---- Honors ---- -->
+                    <h3 class="sub-title" id="honors"><a class="anchor" href="#honors" title="Copy link">Honors</a></h3>
+                    <!-- 条目模板：复制一个 .news-item 即可，新的放最上面（奖学金等也放这里） -->
+                    <div class="news-list">
+                        <div class="news-item">
+                            <span class="news-date">2025</span>
+                            <span class="news-text">Outstanding Graduate of Zhejiang University</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">2025</span>
+                            <span class="news-text">Certificate of <a href="http://ckc.zju.edu.cn/ckcen/_t1906/wbout/list.psp">Chu Kochen Honors Program</a>, Zhejiang University</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">2024</span>
+                            <span class="news-text">First Prize &amp; Highest Computing Performance Award, <a href="http://www.en.cs.zju.edu.cn/2024/0912/c55950a2961719/page.htm">ASC Student Supercomputer Challenge 2024 (ASC24)</a></span>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">2023</span>
+                            <span class="news-text">1st Place, <a href="https://www.hpcwire.com/2023/11/21/sc23-hpc-student-cluster-smackdown/">IndySCC 2023 @ SC23</a></span>
+                        </div>
+                    </div>
+                </section>
+
             </div>
         </main>
 
         <footer class="mt-auto">
             <div class="container">
-                <p>Copyright © 2023-2025 <a href="https://github.com/Yusux" style="text-decoration: none;">@Rorin</a></p>
+                <p>Copyright © 2023-2026 <a href="https://github.com/Yusux" style="text-decoration: none;">@Yusux</a></p>
             </div>
         </footer>
+
+        <!-- 暗色主题下头像用的滤镜：把线稿转成柔和的白色线条，并压低浅色排线的强度。
+             exponent 越大，浅色排线越淡；amplitude 越大，整体线条越亮；第一个 feColorMatrix 前三行最后一列是线条颜色 -->
+        <svg width="0" height="0" style="position: absolute;" aria-hidden="true">
+            <filter id="sketch-dark" color-interpolation-filters="sRGB">
+                <feFlood flood-color="#fff" result="paper"/>
+                <feComposite in="SourceGraphic" in2="paper" operator="over"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.91
+                                                     0 0 0 0 0.93
+                                                     0 0 0 0 0.94
+                                                     -0.333 -0.333 -0.333 0 1"/>
+                <feComponentTransfer>
+                    <feFuncA type="gamma" amplitude="2.2" exponent="1.5"/>
+                </feComponentTransfer>
+            </filter>
+        </svg>
 
         <div class="text-end togglediv">
             <a id="modetoggle" class="darktoggle" href="javascript:;" onclick="themeChange();">
@@ -58,6 +288,6 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/Yusux/Homepage/js/customscript.min.js"></script>
+        <script src="js/customscript.js"></script>
     </body>
 </html>

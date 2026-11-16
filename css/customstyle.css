@@ -1,8 +1,10 @@
-html, body {
+html {
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
+    min-height: 100%;
     font-family: "JetBrains Mono";
 }
 
@@ -11,16 +13,47 @@ body {
     color: #fff;
     background: #222;
 }
-  
+
 ::selection {
     color: #fff;
     background: #222;
 }
 
+/* Dark theme: invert the selection so it stays visible on the dark background */
+body.bg-dark ::-moz-selection {
+    color: #222;
+    background: #f8f9fa;
+}
+
+body.bg-dark ::selection {
+    color: #222;
+    background: #f8f9fa;
+}
+
+/* ---------- Nav ---------- */
+
+.nav-bar {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    font-size: 0.85rem;
+}
+
+.nav-item-link {
+    display: inline-block;
+    margin: 0 0.5rem;
+    line-height: 1.8rem;
+    color: #222;
+    transition: all 0.25s;
+    text-decoration: none;
+}
+
+/* ---------- Profile ---------- */
+
 .pf-group {
     justify-content: center;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 .pf-pic {
@@ -31,17 +64,48 @@ body {
     mix-blend-mode: difference;
 }
 
+/* Dark theme: redraw the sketch as soft white ink (see #sketch-dark in index.html)
+   instead of a plain negative, which makes the faint shading strokes glow */
+body.bg-dark .pf-pic {
+    filter: url(#sketch-dark);
+    mix-blend-mode: normal;
+}
+
 .pf-text {
     font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.pf-sub {
+    font-size: 0.9rem;
+    opacity: 0.65;
+}
+
+.pf-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 3.3rem;
+    margin-bottom: 2.5rem;
 }
 
 .link {
-    line-height: 3.3rem;
-    margin-left: 0.3rem;
-    margin-right: 0.3rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1;
+    margin: 0.4rem 0.45rem;
     color: #222;
     transition: all 0.25s;
     text-decoration: none;
+}
+
+.link .icon {
+    display: block;
+    line-height: 1;
 }
 
 @font-face {
@@ -57,8 +121,184 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Bootstrap Icons fill the whole em box while the iconfont glyphs fill ~90% of it:
+   scale them down so both sets have the same visual size */
+.link .bi {
+    font-size: 1.35rem;
+}
+
+/* The mortarboard's tassel pulls its visual centre down; nudge it back up */
+.link .bi-mortarboard-fill {
+    transform: translateY(-0.06em);
+}
+
+.link .bi::before {
+    display: block;
+    vertical-align: 0;
+}
+
+/* ---------- Content ---------- */
+
+.content {
+    max-width: 50rem;
+    font-size: 0.9rem;
+    line-height: 1.75;
+}
+
+.content section {
+    margin-bottom: 3rem;
+    scroll-margin-top: 1.5rem;
+}
+
+.content a {
+    transition: all 0.25s;
+    text-decoration: underline;
+    text-decoration-color: #F0C9CF;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
+}
+
+.sec-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.35);
+}
+
+.sub-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.9rem;
+    scroll-margin-top: 1.5rem;
+}
+
+/* Headings are links: click to copy the section URL */
+.content a.anchor {
+    text-decoration: none;
+}
+
+.sec-title .anchor::before {
+    content: "# ";
+    color: #F0C9CF;
+}
+
+.sub-title .anchor::before {
+    content: "## ";
+    color: #F0C9CF;
+}
+
+.sec-title::after,
+.sub-title::after {
+    content: "link copied";
+    margin-left: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.sec-title.copied::after,
+.sub-title.copied::after {
+    opacity: 0.65;
+}
+
+.sec-note {
+    font-size: 0.8rem;
+    opacity: 0.65;
+}
+
+/* News / Honors: date + text rows */
+
+.news-item {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    column-gap: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.news-date {
+    opacity: 0.65;
+}
+
+/* Publications */
+
+.pub-item {
+    margin-bottom: 1.6rem;
+}
+
+.pub-title {
+    font-weight: 700;
+}
+
+.pub-authors .me {
+    text-decoration: underline;
+    text-decoration-color: #F0C9CF;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
+}
+
+.pub-venue i {
+    opacity: 0.65;
+}
+
+.pub-award {
+    font-weight: 700;
+    margin-left: 0.5rem;
+}
+
+.pub-links {
+    margin-top: 0.3rem;
+}
+
+.content a.tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    padding: 0.1rem 0.55rem;
+    margin-right: 0.4rem;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 0.3rem;
+    text-decoration: none;
+}
+
+/* Experience / Teaching */
+
+.exp-item {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    column-gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.exp-date {
+    opacity: 0.65;
+}
+
+.exp-org {
+    font-weight: 700;
+}
+
+.exp-detail {
+    opacity: 0.65;
+}
+
+@media (max-width: 575.98px) {
+    .exp-item {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- Footer / Theme toggle ---------- */
+
+footer {
+    font-size: 0.85rem;
+    padding-top: 1rem;
+}
+
 .togglediv {
-    position: absolute;
+    position: fixed;
     color: #fff;
     bottom: 0.7rem;
     right: 1rem;
@@ -69,4 +309,45 @@ body {
     color: #222;
     transition: all 0.25s;
     text-decoration: none;
+}
+
+/* Author marks (* / †): small superscript that doesn't stretch the line height */
+.pub-authors sup,
+.sec-note sup {
+    font-size: 0.75em;
+    line-height: 0;
+    margin-left: 0.05em;
+}
+
+/* Collapsible list (.fold): only the first few items are shown until expanded */
+.fold-hidden {
+    display: none !important;
+}
+
+.fold-toggle-row {
+    margin-left: 13rem;
+    margin-top: -0.4rem;
+}
+
+.content a.fold-toggle {
+    font-size: 0.8rem;
+    opacity: 0.65;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.content a.fold-toggle:hover {
+    opacity: 1;
+}
+
+@media (max-width: 575.98px) {
+    .fold-toggle-row {
+        margin-left: 0;
+    }
+}
+
+/* First sub-section right under a section title: no extra gap */
+.sec-title + .sub-title {
+    margin-top: 0;
 }
